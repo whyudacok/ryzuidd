@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RyzuKomik - Nonton Anime & Baca Manga</title>
+    <meta name="description" content="Nonton anime dan baca manga bahasa Indonesia gratis dengan komunitas Ryzu!">
+    <meta property="og:title" content="RyzuKomik">
+    <meta property="og:description" content="Nonton anime & baca manga dengan komunitas Ryzu">
+    <meta property="og:image" content="https://i.postimg.cc/qqT2wMQW/pngegg(1).png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .bg-wallpaper {
+            background-image: url('https://i.pinimg.com/736x/ea/41/5b/ea415b3cd4584789540d96f94caf0120.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+        }
+        
+        .bg-overlay {
+            background: linear-gradient(to bottom, 
+                rgba(10,10,11,0.7) 0%,
+                rgba(10,10,11,0.85) 40%,
+                rgba(10,10,11,0.95) 80%,
+                rgba(10,10,11,1) 100%);
+        }
+        
+        .char-anime {
+            position: fixed;
+            bottom: 0;
+            right: -10px;
+            z-index: 30;
+            pointer-events: none;
+        }
+        .char-anime img {
+            width: 150px;
+            height: auto;
+            opacity: 0.85;
+        }
+        @media (min-width: 640px) {
+            .char-anime img { width: 220px; }
+        }
+        @media (min-width: 1024px) {
+            .char-anime img { width: 280px; }
+        }
+        
+        .link-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            background: rgba(20,20,22,0.8);
+            border: 1px solid #27272a;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .link-btn:hover {
+            border-color: #f97316;
+        }
+        
+        .modal-qr {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .modal-qr.show { display: flex; }
+        .modal-box {
+            background: #121214;
+            border: 1px solid #27272a;
+            border-radius: 14px;
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen flex flex-col bg-wallpaper">
+
+    <!-- OVERLAY GRADIENT -->
+    <div class="fixed inset-0 bg-overlay z-0"></div>
+
+    <!-- KARAKTER ANIME KANAN BAWAH -->
+    <div class="char-anime">
+        <img src="https://i.postimg.cc/qqT2wMQW/pngegg(1).png" alt="Anime Character">
+    </div>
+
+    <!-- CONTENT -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- LOGO -->
+        <div class="text-center pt-8 pb-2">
+            <span class="text-xl font-black tracking-tight">
+                Ryzu<span class="text-orange-500">Komik</span>
+            </span>
+        </div>
+
+        <!-- DESKRIPSI -->
+        <div class="text-center px-4 pb-4">
+            <h1 class="text-lg font-bold text-neutral-200">
+                Nonton anime & baca manga
+            </h1>
+            <p class="text-xs text-neutral-500 mt-1">
+                dengan komunitas Ryzu yang seru
+            </p>
+        </div>
+
+        <!-- LINKS -->
+        <div class="flex-grow flex flex-col justify-center px-4 pb-32">
+            <div class="max-w-xs mx-auto space-y-2 w-full">
+
+                <!-- WEBSITE -->
+                <a href="https://baca.ryzukomik.space" target="_blank" class="link-btn">
+                    <i class="fa-solid fa-globe text-orange-500 text-sm w-5 text-center"></i>
+                    <div class="flex-1">
+                        <div class="text-xs font-bold">Website</div>
+                        <div class="text-[10px] text-neutral-500">Baca manga & nonton anime</div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-zinc-600 text-[10px]"></i>
+                </a>
+
+                <!-- TIKTOK -->
+                <a href="https://www.tiktok.com/@ryzukomik" target="_blank" class="link-btn">
+                    <i class="fa-brands fa-tiktok text-pink-400 text-sm w-5 text-center"></i>
+                    <div class="flex-1">
+                        <div class="text-xs font-bold">TikTok</div>
+                        <div class="text-[10px] text-neutral-500">Konten anime & manga</div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-zinc-600 text-[10px]"></i>
+                </a>
+
+                <!-- WHATSAPP -->
+                <a href="https://chat.whatsapp.com/RYZU_GROUP" target="_blank" class="link-btn">
+                    <i class="fa-brands fa-whatsapp text-green-400 text-sm w-5 text-center"></i>
+                    <div class="flex-1">
+                        <div class="text-xs font-bold">Grup WhatsApp</div>
+                        <div class="text-[10px] text-neutral-500">Gabung komunitas Ryzu</div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-zinc-600 text-[10px]"></i>
+                </a>
+
+                <!-- DONASI -->
+                <button onclick="openDonate()" class="link-btn w-full">
+                    <i class="fa-solid fa-heart text-yellow-500 text-sm w-5 text-center"></i>
+                    <div class="flex-1 text-left">
+                        <div class="text-xs font-bold text-yellow-400">Donasi</div>
+                        <div class="text-[10px] text-neutral-500">Dukung RyzuKomik</div>
+                    </div>
+                    <i class="fa-solid fa-qrcode text-zinc-600 text-[10px]"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="text-center pb-5">
+            <p class="text-[10px] text-neutral-600">
+                RyzuKomik &copy; 2025
+            </p>
+        </div>
+
+    </div>
+
+    <!-- MODAL DONASI QR -->
+    <div id="donateModal" class="modal-qr" onclick="if(event.target===this)closeDonate()">
+        <div class="modal-box">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-sm font-bold">
+                    <i class="fa-solid fa-heart text-yellow-500 mr-1"></i>Donasi
+                </span>
+                <button onclick="closeDonate()" class="text-neutral-500 hover:text-white">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <p class="text-[10px] text-neutral-500 mb-3">Scan QR untuk donasi</p>
+            
+            <!-- QR A6 -->
+            <div class="bg-white rounded-lg p-2 mx-auto">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=QRIS_RYZU" 
+                     alt="QR Donasi"
+                     class="w-full h-auto"
+                     onerror="this.src='https://placehold.co/400x400/ffffff/000000?text=QR'">
+            </div>
+            
+            <p class="text-[9px] text-neutral-600 mt-2">Terima kasih!</p>
+        </div>
+    </div>
+
+    <script>
+        function openDonate() {
+            document.getElementById('donateModal').classList.add('show');
+        }
+        function closeDonate() {
+            document.getElementById('donateModal').classList.remove('show');
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeDonate();
+        });
+    </script>
+
+</body>
+</html>
